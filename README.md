@@ -1,2 +1,41 @@
 # monorepo-project
+
 Create monorepo &amp; design system
+
+### Apps and Packages
+
+- `component-design-ui`: a [React.JS]() app
+- `dashboard`: another [React.Js]() app
+- `chat-server`: Node JS
+
+## Setup
+
+This repository is used in the `npx lerna@latest` command, and selected when choosing which package manager you wish to use with your monorepo (Yarn).
+
+### Build
+
+To build all apps and packages, run the following command:
+
+```
+cd monorepo-test-socket
+yarn
+yarn bootstrap
+yarn run build
+```
+
+### Develop
+
+To develop all apps and packages, run the following command:
+
+```
+cd monorepo-test-socket
+
+// for dashboard dev
+yarn dashboard:dev
+
+// admin dev
+yarn admin:dev
+
+// chat-server
+chat-server:dev
+```
