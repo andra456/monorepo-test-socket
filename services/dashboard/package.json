@@ -1,0 +1,35 @@
+{
+  "name": "dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "component-design-ui": "^0.1.0",
+    "socket.io-client": "3.0.4",
+    "@types/lodash-es": "4.17.6",
+    "crypto-js": "^4.1.1",
+    "recoil" : "0.7.4"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "peerDependencies": {
+    "@types/jest": "24.0.19",
+    "@types/node": "12.11.1",
+    "@types/react": "16.9.9",
+    "@types/react-dom": "16.9.2",
+    "axios": "0.21.1",
+    "customize-cra": "^0.8.0",
+    "emotion": "10.0.27",
+    "emotion-server": "10.0.27",
+    "react-query": "^3.9.8",
+    "react-router": "5.2.0",
+    "react-router-dom": "5.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.1.5"
+  }
+}
