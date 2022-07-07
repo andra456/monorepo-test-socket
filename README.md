@@ -10,7 +10,7 @@ Create monorepo &amp; design system
 
 ## Setup
 
-This repository is used in the `npx lerna@latest` command, and selected when choosing which package manager you wish to use with your monorepo (Yarn).
+This repository is used in the `npx lerna@latest` command,.
 
 ### Build
 
