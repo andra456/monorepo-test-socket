@@ -7,7 +7,6 @@ import { queryClient } from "../../util/query";
 import { AppProvider } from "../../contexts/appContext";
 
 const Nav = React.lazy(() => import("./navigation"));
-const Footer = React.lazy(() => import("./footer"));
 const SidePanels = React.lazy(() => import("./navigation/sidePanel"));
 
 function Wrapper(props: any) {
@@ -40,14 +39,19 @@ function Wrapper(props: any) {
             <RecoilRoot>
               <div className={layout}>
                 <div className={`preloader ${preload ? "active" : ""}`}>
-                  <div className="logo-center">{`logo`}</div>
+                  <div className="logo-center">
+                    <img
+                      className="svg"
+                      src="https://www.telkomsel.com/sites/default/files/mainlogo-2022-rev.png"
+                    />
+                  </div>
                 </div>
                 {props.layout !== "blank" ? (
                   <div className={`constractor ${active ? "active-push" : ""}`}>
                     {nav ? (
                       <Nav
                         active={active}
-                        onShowPushMenu={e => {
+                        onShowPushMenu={(e) => {
                           activated(e);
                         }}
                       />
@@ -60,7 +64,6 @@ function Wrapper(props: any) {
                         <div className="body-content">{props.children}</div>
                       </div>
                     </div>
-                    <Footer />
                   </div>
                 ) : (
                   <div>{props.children}</div>

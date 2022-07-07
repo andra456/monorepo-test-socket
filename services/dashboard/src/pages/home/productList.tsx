@@ -3,27 +3,34 @@ import { useMutation } from "react-query";
 import { useParams } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { Row, Col } from "component-design-ui/src";
+import { cx } from "emotion";
 import { categoriesAtoms } from "../../contexts/cart";
 import { fetcher } from "../../util/fetcher";
 import { productBycategoriesAPI, productsAPI } from "../../constant/apiURL";
-
+import { emptyStuf } from "./_homeStyle";
 const ProductCard = lazy(() => import("./product"));
 const Home = () => {
   const params: any = useParams();
   const [categories, setCategories] = useRecoilState(categoriesAtoms);
   const [products, setProducts] = useState<any[]>([]);
 
-  const getAllProducts = useMutation(() => fetcher(productsAPI, { method: "GET" }), {
-    onSuccess: data => {
-      setProducts(data);
-    },
-  });
+  const getAllProducts = useMutation(
+    () => fetcher(productsAPI, { method: "GET" }),
+    {
+      onSuccess: (data) => {
+        setProducts(data);
+      },
+    }
+  );
 
-  const getProductByCategories = useMutation((req: any) => fetcher(productBycategoriesAPI(req.id), { method: "GET" }), {
-    onSuccess: data => {
-      setProducts(data);
-    },
-  });
+  const getProductByCategories = useMutation(
+    (req: any) => fetcher(productBycategoriesAPI(req.id), { method: "GET" }),
+    {
+      onSuccess: (data) => {
+        setProducts(data);
+      },
+    }
+  );
   useEffect(() => {
     if (params.id && categories?.some((e: string) => e === params?.id)) {
       getProductByCategories.mutate({ id: params.id as string });
@@ -35,7 +42,18 @@ const Home = () => {
   return (
     <div className="products-wrapper">
       <Row>
+        {products.length === 0 && (
+          <div className={cx("empty-stuff", emptyStuf)}>
+            Sorry we out of stock
+          </div>
+        )}
         {getProductByCategories.isLoading &&
+          [1, 2, 3, 4].map((e: number) => (
+            <Col size={6} key={e}>
+              <ProductCard isLoading={true} />
+            </Col>
+          ))}
+        {getAllProducts.isLoading &&
           [1, 2, 3, 4].map((e: number) => (
             <Col size={6} key={e}>
               <ProductCard isLoading={true} />

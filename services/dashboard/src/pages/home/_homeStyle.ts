@@ -19,10 +19,19 @@ export const toggleChat = css`
     margin-right: 10px;
   }
 `;
+export const emptyStuf = css`
+  &.empty-stuff {
+    font-size: 25px;
+    display: block;
+    width: 100%;
+    padding: 20px;
+    color: ${color["n-100"]};
+    text-align: center;
+  }
+`;
 const wrapper = css`
   display: block;
   padding: 10px 10px !important;
-
   .card-body {
     padding: 10px 10px 10px;
     h4 {
