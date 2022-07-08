@@ -10,7 +10,7 @@ Create monorepo &amp; design system
 
 ## Setup
 
-This repository is used in the `npx lerna@latest` command,.
+This repository is used in the `npx lerna@latest` command.
 
 ### Build
 
