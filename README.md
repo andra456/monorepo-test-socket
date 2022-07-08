@@ -5,7 +5,7 @@ Create monorepo &amp; design system
 ### Apps and Packages
 
 - `component-design-ui`: a [React.JS]() app
-- `dashboard`: another [React.Js]() app
+- `dashboard`: another [React.Js]() app, demo : [here](https://main--heartfelt-bombolone-cbb7cb.netlify.app/explore/all)
 - `chat-server`: Node JS
 
 ## Setup
